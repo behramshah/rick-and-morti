@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import styles from "./Card.module.scss";
 
 const CardDetails = () => {
   let { id } = useParams();
@@ -62,6 +64,14 @@ const CardDetails = () => {
           <div className="">
             <span className="fw-bold">Created: </span>
             {created}
+          </div>
+          <div className="">
+            <Link to={"/"}>
+              <div className={`${styles.goBack}`}
+              >
+                <p>Home</p>
+              </div>
+            </Link>            
           </div>
         </div>
       </div>
