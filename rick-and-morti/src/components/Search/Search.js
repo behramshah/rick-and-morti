@@ -16,15 +16,8 @@ const Search = ({ search, setSearch, updatePageNumber, fetchedData, page }) => {
           key={id}
           className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark"
         >
-          <div
-            className={`${styles.card} d-flex flex-column justify-content-center`}
-          >
-            <div className={`${styles.content}`}>
-              <div className="fs-5 fw-bold mb-4">{name}</div>
-              <div className="">
-                <div className="fs-5">{origin.name}</div>
-              </div>
-            </div>
+          <div className={`${styles.automplete_element}`}>
+              <p><span>{name}</span> origin: <span>{origin.name}</span></p>              
           </div>
         </Link> : null
       );
@@ -45,20 +38,12 @@ const Search = ({ search, setSearch, updatePageNumber, fetchedData, page }) => {
         }}
         placeholder="Search for characters"
         className={styles.input}
-        type="text"
+        type="search"
+        autocomplete="on"
       />
-      {display}
-      {/* {
-        search.length && fetchedData.results ?
-        <div className="autocomplete">
-          {fetchedData.results.map((character, id) => 
-          <div className="autocomplete_element">
-            <h6 className="autocomplete_name" key={id}>{character.name}</h6>
-            <p className="autocomplete_origin">{character.origin.name}</p>
-          </div>
-        )}
-        </div> : null
-      } */}
+      <div className={`${styles.automplete}`}>
+        {display}
+      </div>
     </form>
   );
 };
