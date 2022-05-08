@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <div className="App">
       <h1 className="text-center mb-3">Characters</h1>
-      <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
+      <Search search={search} setSearch={setSearch} updatePageNumber={updatePageNumber} fetchedData={fetchedData} page="/"/>
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-12">
