@@ -5,7 +5,13 @@ const CardDetails = () => {
   let { id } = useParams();
 
   let [fetchedData, updateFetchedData] = useState([]);
-  let { name, location, origin, gender, image, status, species } = fetchedData;
+  let [episode, setEpisode] = useState([]);
+  let { name, location, origin, gender, image, status, species, created } = fetchedData;
+  let firstEpisode = episode.slice(-1)
+
+
+  console.log(fetchedData.episode)
+  
 
   let api = `https://rickandmortyapi.com/api/character/${id}`;
 
@@ -13,6 +19,7 @@ const CardDetails = () => {
     (async function () {
       let data = await fetch(api).then((res) => res.json());
       updateFetchedData(data);
+      setEpisode(data.episode[0])
     })();
   }, [api]);
 
@@ -47,6 +54,14 @@ const CardDetails = () => {
           <div className="">
             <span className="fw-bold">Species: </span>
             {species}
+          </div>
+          <div className="">
+            <span className="fw-bold">Episode first seen in episode: </span>
+            {firstEpisode}            
+          </div>
+          <div className="">
+            <span className="fw-bold">Created: </span>
+            {created}
           </div>
         </div>
       </div>
