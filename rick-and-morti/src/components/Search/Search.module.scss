@@ -1,0 +1,43 @@
+.input {
+  width: 40%;
+  border: 2px solid #0b5ed7;
+  border-radius: 8px;
+  box-shadow: 1px 3px 9px rgba($color: #000000, $alpha: 0.25);
+  padding: 10px 15px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  box-shadow: 1px 3px 9px rgba($color: #000000, $alpha: 0.25);
+}
+
+.automplete{
+  width: 40%;
+  height: 110px;
+  overflow-y:auto;
+  scrollbar-width: 0;
+}
+
+
+.automplete_element {
+  display: flex;
+  justify-content:center;
+  border: 1px solid rgb(84, 182, 228);
+  color: darkgreen;
+  font-weight:bold;
+  border-radius: 15px;
+  margin: 5px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #FAFD7C99;
+  }
+}
+
+@media (max-width: 576px) {
+  .input {
+    width: 80%;
+  }
+}
